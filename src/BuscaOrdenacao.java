@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class BuscarOrdenacao {
+public class BuscaOrdenacao {
 	
 	Random gerador = new Random();
 	
@@ -24,6 +24,28 @@ public class BuscarOrdenacao {
 	  
 	        System.out.println();
 		
+	}
+	
+	public void insertionSort(int[] lista) {
+		int key;
+		int i;
+		for(int j=1; j< lista.length;j++) {
+			key = lista[j];
+			i = j -1;
+			
+			while (i >= 0  && lista[i] > key) {
+				lista[i+1] = lista[i];
+				i = i -1;
+			}
+			lista[i+1] = key;
+		}
+		/*try {
+			TimeUnit.SECONDS.sleep(1);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		};
+		*/
 	}
 
 }
