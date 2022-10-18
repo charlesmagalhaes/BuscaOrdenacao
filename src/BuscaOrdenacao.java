@@ -17,7 +17,7 @@ public class BuscaOrdenacao {
 	}
 	
 	
-	public void imprimirArray(int[] lista, String tituloLista) {
+	public static void imprimirArray(int[] lista, String tituloLista) {
 		 System.out.print(tituloLista);
 	        for (int i = 0; i < lista.length; ++i)
 	            System.out.print(lista[i] + " ");
@@ -46,6 +46,33 @@ public class BuscaOrdenacao {
 			e.printStackTrace();
 		};
 		*/
+	}
+	
+	
+	public static int buscaBinaria(int buscarValor, int[] lista){
+				
+		int inicio = 0, fim = lista.length-1;
+		int meio;
+		
+		while (inicio <= fim) {
+			meio = (inicio + fim) / 2;
+			if (buscarValor == lista[meio])
+				return meio;
+			if (buscarValor < lista[meio])
+				fim = meio - 1;
+			else
+				inicio = meio + 1;
+		}
+		return -1;
+	}
+	
+	public static int buscaSequencial(int buscarValor, int[] lista) {
+		for(int i=0; i< lista.length;i++) {
+			if(lista[i] == buscarValor)
+				return i;
+		}
+		return -1;
+		
 	}
 
 }
