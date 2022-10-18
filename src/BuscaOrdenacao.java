@@ -67,11 +67,12 @@ public class BuscaOrdenacao {
 	}
 	
 	public static int buscaSequencial(int buscarValor, int[] lista) {
+		int contaElementos=0;
 		for(int i=0; i< lista.length;i++) {
 			if(lista[i] == buscarValor)
-				return i;
+				contaElementos++;
 		}
-		return -1;
+		return contaElementos;
 		
 	}
 

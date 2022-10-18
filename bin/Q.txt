@@ -1,0 +1,9 @@
+feito com o System.currentTimeMillis();
+
+Tempo de processamento por busca binária: 0,0000000 ms
+Tempo de processamento por busca sequencial: 0,0010000 ms
+
+Teste fazendo com o System.nanoTime();
+
+Tempo de processamento por busca binária: 0,0240000 milliseconds
+Tempo de processamento por busca sequencial: 0,0960000 milliseconds
