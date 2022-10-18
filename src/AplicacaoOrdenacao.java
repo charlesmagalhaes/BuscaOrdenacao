@@ -1,8 +1,13 @@
+import java.util.Random;
 
 public class AplicacaoOrdenacao {
 
+	private static final String LINHA_SEPARACAO = "--------------------------------------------------------------------------------------";
+
 	public static void main(String[] args) {
 		BuscaOrdenacao ordenacao = new BuscaOrdenacao();
+		
+		Random gerador = new Random();
 		
 		int[] listaGerada = ordenacao.gerarArrayRandom(1, 10000, 500);
 		
@@ -13,11 +18,11 @@ public class AplicacaoOrdenacao {
 		
 		BuscaOrdenacao.imprimirArray(listaGerada, "Lista Organizada insertion sort: ");
 		
-		int numeroSorteado = (int) Math.floor(Math.random() * 10000); 
+		int numeroSorteado = gerador.nextInt(1, 10000); 
 	
 		System.out.println("Numero sorteado: "+numeroSorteado);
 		
-		System.out.println("--------------------------------------------------------------------------------------");
+		System.out.println(LINHA_SEPARACAO);
 		
 		
 		/*
@@ -45,16 +50,16 @@ public class AplicacaoOrdenacao {
 		*/
 		
 		
-		System.out.println("--------------------------------------------------------------------------------------");
+		System.out.println(LINHA_SEPARACAO);
 		
 		if(BuscaOrdenacao.buscaBinaria(numeroSorteado, listaGerada) >= 0)
-			System.out.println("Elemento foi encontrado(busca ordenacão). Posição: "+BuscaOrdenacao.buscaBinaria(numeroSorteado, listaGerada));
+			System.out.println("Elemento foi encontrado(busca binária). Posição: "+BuscaOrdenacao.buscaBinaria(numeroSorteado, listaGerada));
 		else System.out.println("Elemento não encontrado com o valor de busca(busca binária).");
 		
-		System.out.println("--------------------------------------------------------------------------------------");
+		System.out.println(LINHA_SEPARACAO);
 		
 		if(BuscaOrdenacao.buscaSequencial(numeroSorteado, listaGerada) > 0)
-			System.out.print("Encontrado(s) "+BuscaOrdenacao.buscaSequencial(numeroSorteado, listaGerada)+" elemento(s) iguai(s)(busca por sequencial).");
+			System.out.print("Encontrado(s) "+BuscaOrdenacao.buscaSequencial(numeroSorteado, listaGerada)+" elemento(s) igual(is)(busca sequencial).");
 		else System.out.println("Elemento não encontrado com o valor de busca(busca sequencial).");
 
 	}

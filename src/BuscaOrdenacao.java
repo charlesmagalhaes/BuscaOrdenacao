@@ -7,11 +7,11 @@ public class BuscaOrdenacao {
 	/**
      * Cria um array com numeros aleatórios
      */
-	public int[] gerarArrayRandom(int Faixainicial, int Faixafinal, int qtsElementos) {
+	public int[] gerarArrayRandom(int faixaInicial, int faixaFinal, int qtsElementos) {
 		int[] listaMerge = new int[qtsElementos];
 
 		for (int i = 0; i < listaMerge.length; i++) {
-			listaMerge[i] = gerador.nextInt(Faixainicial, Faixafinal);
+			listaMerge[i] = gerador.nextInt(faixaInicial, faixaFinal);
 		}
 		return listaMerge;
 	}
@@ -39,19 +39,14 @@ public class BuscaOrdenacao {
 			}
 			lista[i+1] = key;
 		}
-		/*try {
-			TimeUnit.SECONDS.sleep(1);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		};
-		*/
+		
 	}
 	
 	
 	public static int buscaBinaria(int buscarValor, int[] lista){
 				
-		int inicio = 0, fim = lista.length-1;
+		int inicio = 0;
+		int fim = lista.length-1;
 		int meio;
 		
 		while (inicio <= fim) {
